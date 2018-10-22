@@ -1,9 +1,9 @@
 package lab09.fin;
 
-public class CustomerDataAccessor{
+public class CustomerDataAccessor {
 
 	@Transactional(false)
-	public void doAccess() {
+	public void execute() {
 	  // Do something
 	}
 }

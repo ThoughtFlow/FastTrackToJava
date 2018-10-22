@@ -1,5 +1,6 @@
-package lab08.fin;
+package lab08.init;
 
+import java.util.Collections;
 import java.util.EnumSet;
 import java.util.Set;
 
@@ -49,31 +50,13 @@ public enum RgbColor {
 	
 	public Set<RgbColor> getEqualBightness(RgbColor combineWith) {
 
-		// Make sure to not add the brightness for the same color
-		float brightness = combineWith != this ? getBrightness() + combineWith.getBrightness() : this.getBrightness(); 
-		Set<RgbColor> matches = EnumSet.noneOf(RgbColor.class); 
-
-		for (RgbColor nextRgb : RgbColor.values()) {
-			if (nextRgb != this && nextRgb != combineWith) {
-				if (nextRgb.getBrightness() == brightness) {
-					matches.add(nextRgb);
-				}
-			}
-		}
-
-		return matches;
+		// Implement this
+		return Collections.EMPTY_SET;
 	}
 
 	public Float getTotalBrightnessInRange(RgbColor until) {
-		float total = 0;
 
-		// Make sure to compare a color that is lower to one that is higher
-		if (this.ordinal() <= until.ordinal()) {
-		    for (RgbColor next : EnumSet.range(this, until)) {
-                total += next.getRed() + next.getGreen() + next.getBlue();
-            }
-		}
-
-		return total;
+	    // Implement this
+	    return 0f;
 	}
 }

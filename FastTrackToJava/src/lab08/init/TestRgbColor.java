@@ -1,4 +1,4 @@
-package lab08.fin;
+package lab08.init;
 
 import java.util.EnumSet;
 import java.util.Set;

@@ -1,17 +1,11 @@
-package lab09.fin;
+package lab09.init;
 
 import java.lang.reflect.Method;
 
 public class AnnotationAnalyzer {
 
 	public static void printAnnotationDetails(Object object) {
-		Method[] methods = object.getClass().getMethods();
-		for (Method nextMethod : methods) {
-			Transactional t = nextMethod.getAnnotation(Transactional.class);
-			if (t != null) {
-			   System.out.println(object.getClass().getName() + " " + nextMethod.getName() + ": " + t.value() + " " + t.commitType());
-			}
-		}
+		// Implement this
 	}
 	
 	public static void main(String[] args) {
