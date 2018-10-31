@@ -2,6 +2,7 @@ package lab05.init;
 
 public class CheckingAccount {
 
+	private static final String ACCOUNT_TYPE = "Checking";
 	private static int nextNumber = 0;
 
 	private final Customer customer;
@@ -41,10 +42,14 @@ public class CheckingAccount {
 		return balance;
 	}
 	
+	public String getAccountType() {
+		return ACCOUNT_TYPE;
+	}
 	
 	public void printAccount() {
 		customer.printAccount();
 		System.out.println("Account: " + number);
+		System.out.println("Type: " + getAccountType());
 		System.out.println("Balance: " + balance);
 	}
 }
