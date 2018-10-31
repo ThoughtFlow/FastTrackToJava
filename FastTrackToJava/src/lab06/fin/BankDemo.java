@@ -1,9 +1,9 @@
-package lab06.fin.com.mycorp;
+package lab06.fin;
 
 
-import lab06.fin.com.mycorp.account.CheckingAccount;
-import lab06.fin.com.mycorp.account.SavingsAccount;
-import lab06.fin.com.mycorp.customer.Customer;
+import lab06.fin.account.CheckingAccount;
+import lab06.fin.account.SavingsAccount;
+import lab06.fin.customer.Customer;
 
 /**
  * This is the main program that exercises the classes in the lab.

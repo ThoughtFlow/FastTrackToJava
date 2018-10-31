@@ -1,4 +1,4 @@
-package lab06.fin.com.mycorp.customer;
+package lab06.fin.customer;
 
 /**
  * This class represents the account holder.

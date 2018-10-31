@@ -1,7 +1,7 @@
-package lab06.fin.com.mycorp.account;
+package lab06.fin.account;
 
 
-import lab06.fin.com.mycorp.customer.Customer;
+import lab06.fin.customer.Customer;
 
 /**
  * This class represents the Savings account. It is derived from CheckingAccount.
