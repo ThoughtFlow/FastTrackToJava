@@ -1,7 +1,7 @@
-package lab07.fin.com.mycorp.account;
+package lab07.init.account;
 
 
-import lab07.fin.com.mycorp.customer.Customer;
+import lab07.init.customer.Customer;
 
 /**
  * This class represents the Savings account. It is derived from CheckingAccount.
@@ -19,9 +19,8 @@ public class SavingsAccount extends CheckingAccount {
 	 * 
 	 * @param customer The customer attached to this account.
 	 * @param balance The initial balance.
-	 * @throws NullPointerException Thrown if customer is null.
 	 */
-	public SavingsAccount(Customer customer, double balance) throws NullPointerException {
+	public SavingsAccount(Customer customer, double balance) {
 		super(customer, balance, ACCOUNT_TYPE);
 	}
 	
@@ -29,9 +28,8 @@ public class SavingsAccount extends CheckingAccount {
 	 * Creates an instance with a given customer and zero balance. Sets the account type to "Savings".
 	 * 
 	 * @param customer The customer attached to this account.
-	 * @throws NullPointerException Thrown if customer is null.
 	 */
-	public SavingsAccount(Customer customer) throws NullPointerException {
+	public SavingsAccount(Customer customer) {
 		super(customer, ACCOUNT_TYPE);
 	}
 

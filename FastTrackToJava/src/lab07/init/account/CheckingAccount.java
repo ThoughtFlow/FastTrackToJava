@@ -1,6 +1,6 @@
-package lab07.init.com.mycorp.account;
+package lab07.init.account;
 
-import lab07.init.com.mycorp.customer.Customer;
+import lab07.init.customer.Customer;
 
 /**
  * This class models the checking account. It also acts as a base class for other types of accounts. 

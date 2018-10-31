@@ -1,4 +1,4 @@
-package lab07.fin.com.mycorp.account;
+package lab07.fin.account;
 
 /**
  * Exception thrown to indicate that there is insufficient balance in a bank account.

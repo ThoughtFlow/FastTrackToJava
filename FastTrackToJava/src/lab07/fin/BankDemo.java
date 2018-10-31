@@ -1,10 +1,10 @@
-package lab07.fin.com.mycorp;
+package lab07.fin;
 
 
-import lab07.fin.com.mycorp.account.CheckingAccount;
-import lab07.fin.com.mycorp.account.NonSufficientFundsException;
-import lab07.fin.com.mycorp.account.SavingsAccount;
-import lab07.fin.com.mycorp.customer.Customer;
+import lab07.fin.account.CheckingAccount;
+import lab07.fin.account.NonSufficientFundsException;
+import lab07.fin.account.SavingsAccount;
+import lab07.fin.customer.Customer;
 
 /**
  * This is the main program that exercises the classes in the lab.

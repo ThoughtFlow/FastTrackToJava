@@ -1,9 +1,9 @@
-package lab07.init.com.mycorp;
+package lab07.init;
 
 
-import lab07.init.com.mycorp.account.CheckingAccount;
-import lab07.init.com.mycorp.account.SavingsAccount;
-import lab07.init.com.mycorp.customer.Customer;
+import lab07.init.account.CheckingAccount;
+import lab07.init.account.SavingsAccount;
+import lab07.init.customer.Customer;
 
 /**
  * This is the main program that exercises the classes in the lab.

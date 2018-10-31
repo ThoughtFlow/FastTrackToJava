@@ -1,4 +1,4 @@
-package lab07.init.com.mycorp.customer;
+package lab07.init.customer;
 
 /**
  * This class represents the account holder.
