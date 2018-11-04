@@ -1,13 +1,9 @@
-package chap15;
+package chap16;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
-import java.nio.channels.ClosedSelectorException;
-import java.nio.channels.SelectionKey;
-import java.nio.channels.Selector;
-import java.nio.channels.ServerSocketChannel;
-import java.nio.channels.SocketChannel;
+import java.nio.channels.*;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -91,7 +87,7 @@ public class NioEchoServer implements Runnable {
                     }
                 }
             }
-        } catch (ClosedSelectorException e) {
+        } catch (ClosedSelectorException | CancelledKeyException e) {
             logger.info("Shut down");
         } catch (IOException e) {
             throw new RuntimeException("Encountered an I/O error. Bailing out.", e);
@@ -199,16 +195,6 @@ public class NioEchoServer implements Runnable {
                     nioEchoServer.shutdown();
                 }
             });
-            while (true) {
-                String line = System.console().readLine("Type 'shutdown' to shut down> ");
-                if (line == null) {
-                    System.out.println("Press CTRL+C to shutdown this server");
-                    break; // don't shut down
-                } else if ("shutdown".equals(line)) {
-                    nioEchoServer.shutdown();
-                    break;
-                }
-            }
         }
     }
 }

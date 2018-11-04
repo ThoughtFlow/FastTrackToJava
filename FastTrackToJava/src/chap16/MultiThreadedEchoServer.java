@@ -1,4 +1,4 @@
-package chap15;
+package chap16;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,9 +7,11 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class MultiThreadedEchoServer implements Runnable {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         MultiThreadedEchoServer server = new MultiThreadedEchoServer(Integer.parseInt(args[0]));
-        new Thread(server).start();
+        Thread thread = new Thread(server);
+        thread.start();
+        thread.join();
         server.shutdown();
     }
 
@@ -33,7 +35,9 @@ public class MultiThreadedEchoServer implements Runnable {
             while (this.runFlag) {
                 Socket clientSocket = serverSocket.accept();
                 Handler handler = new Handler(clientSocket);
-                new Thread(handler).start();
+                Thread thread = new Thread(handler);
+                thread.start();
+                
             }
         } catch (IOException e) {
             e.printStackTrace();
