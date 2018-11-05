@@ -14,5 +14,6 @@ public class FunctionalComposition
 
         // Compose using compose()
     	full = x -> x; // implement this
+        System.out.println(full.apply(3));
     }
 }
