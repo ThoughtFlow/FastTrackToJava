@@ -20,11 +20,11 @@ public class StoreAsMap {
 		};
 	
 
-	private static Map<String, Pair<String, String>>  toMap(String[][] languageSet) {
+	private static Map<String, Pair<String, String>>  toMap(String[][] numberSet) {
 		
 		Map<String, Pair<String, String>> pairMap = new HashMap<>();
 		
-		for (String[] nextRow : languageSet) {
+		for (String[] nextRow : numberSet) {
 			Pair<String, String> nextPair = new Pair<>(nextRow[0], nextRow[1]);
 			pairMap.put(nextPair.getT(), nextPair);
 		}

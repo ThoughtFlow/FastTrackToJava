@@ -27,7 +27,7 @@ public class StoreAsCollection {
 
 
 		// Initialize
-		ArrayList<Pair<Integer, String>> listOfPairs = new ArrayList<Pair<Integer, String>>(10);
+		List<Pair<Integer, String>> listOfPairs = new ArrayList<Pair<Integer, String>>(10);
         for (int index = 0; index < NUMBER_ARRAY.length; ++index) {
             listOfPairs.add(null);
         }

@@ -47,7 +47,7 @@ public enum RgbColor {
 		return red + green + blue;
 	}
 	
-	public Set<RgbColor> getEqualBightness(RgbColor combineWith) {
+	public Set<RgbColor> getEqualBrightness(RgbColor combineWith) {
 
 		// Make sure to not add the brightness for the same color
 		float brightness = combineWith != this ? getBrightness() + combineWith.getBrightness() : this.getBrightness(); 
