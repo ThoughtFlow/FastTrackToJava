@@ -1,8 +1,5 @@
 package chap17;
 
-/**
- * Created by Nick Maiorano.
- */
 public class ThreadDemo {
 
     public static void main(String[] args) throws InterruptedException {
