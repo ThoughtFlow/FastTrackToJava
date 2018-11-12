@@ -18,7 +18,7 @@ public class StockMarketReactor {
 	private static long startTime = System.currentTimeMillis();
 
 	private static void log(String toLog) {
-		long time = System.currentTimeMillis() / 1000 - startTime;
+		long time = System.currentTimeMillis() - startTime;
 		System.out.println(time + ": " + toLog);
 	}
 
