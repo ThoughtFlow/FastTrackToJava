@@ -167,6 +167,8 @@ public class Promises {
         promiseThree();
         promiseFour();
         promiseFive();
-        promiseSix();
+
+        // This will throw an error
+        //promiseSix();
     }
 }

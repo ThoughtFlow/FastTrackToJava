@@ -6,7 +6,7 @@ public class ExecutionServiceTest {
     public static void main(String... args) {
         {
             ExecutorService service = Executors.newCachedThreadPool();
-            service.submit(() -> {/* do something*/});
+            service.submit(() -> {System.out.println("Running in a thread: " + Thread.currentThread().getName());});
 
             service.shutdown();
         }
@@ -17,6 +17,7 @@ public class ExecutionServiceTest {
 
             try {
                 Integer result = future.get();
+                System.out.println("Getting result: " + result);
             } catch (InterruptedException | ExecutionException e) {
                 // Deal with error...
             }
@@ -30,6 +31,7 @@ public class ExecutionServiceTest {
 
             try {
                 Integer result = future.get(10, TimeUnit.SECONDS);
+                System.out.println("Getting result: " + result);
             } catch (InterruptedException | TimeoutException | ExecutionException e) {
                 // Deal with error...
             }

@@ -43,10 +43,16 @@ public class ReactiveStreams {
             // Hot observable – messages will be dropped
             System.out.println("Hot observable - some messages will be dropped");
             AtomicInteger count = new AtomicInteger(0);
+
+            // Create the message source with backpressure set to drop (if producer is too fast, messages are dropped)
             PublishSubject<Integer> observable = PublishSubject.create();
             observable.toFlowable(BackpressureStrategy.DROP).
                     observeOn(Schedulers.computation()).subscribe(i -> count.incrementAndGet());
+
+            // Feed the observable with 100 million messages
             IntStream.range(1, 100_000_000).forEach(observable::onNext);
+
+            // Count how many have actually been received.
             System.out.println(count.get());
             System.out.println("==================");
         }
