@@ -1,4 +1,4 @@
-package chap22;
+package chap21;
 
 public class Calculator {
     public double squareRoot(double input) throws IllegalArgumentException {

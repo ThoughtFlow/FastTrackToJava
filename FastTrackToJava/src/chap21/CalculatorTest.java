@@ -1,4 +1,4 @@
-package chap22;
+package chap21;
 
 
 import org.junit.jupiter.api.Assertions;
@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
-public class TestCalculator {
+public class CalculatorTest {
 
     @Test
     public void testSquareRootException() throws IllegalArgumentException {

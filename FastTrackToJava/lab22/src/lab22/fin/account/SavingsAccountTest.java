@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestSavingsAccount {
+public class SavingsAccountTest {
 
     private Customer testCustomer;
 
@@ -46,21 +46,8 @@ public class TestSavingsAccount {
 
     @Test
     public void testBadCreation() {
-        try {
-            new SavingsAccount(null, 10);
-            fail("Should have thrown an exception");
-        }
-        catch (Throwable e) {
-            assertEquals(e.getClass(), NullPointerException.class);
-        }
-
-        try {
-            new SavingsAccount(null);
-            fail("Should have thrown an exception");
-        }
-        catch (Throwable e) {
-            assertEquals(e.getClass(), NullPointerException.class);
-        }
+        assertThrows(NullPointerException.class, () -> new SavingsAccount(null, 10));
+        assertThrows(NullPointerException.class, () -> new SavingsAccount(null));
     }
 
     @Test

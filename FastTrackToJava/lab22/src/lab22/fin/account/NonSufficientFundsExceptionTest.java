@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestNonSufficientFundsException {
+public class NonSufficientFundsExceptionTest {
 
     private Customer testCustomer;
 

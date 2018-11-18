@@ -1,4 +1,4 @@
-package chap22;
+package chap21;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assumptions.assumingThat;
 
-public class TestMiscFeatures {
+public class MiscFeaturesTest {
 
     @Disabled
     public void testDisabled() {
