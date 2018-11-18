@@ -1,7 +1,7 @@
-package lab22.init.account;
+package lab22.fin.account;
 
 
-import lab22.init.customer.Customer;
+import lab22.fin.customer.Customer;
 
 /**
  * This class models the checking account. It also acts as a base class for other types of accounts. 

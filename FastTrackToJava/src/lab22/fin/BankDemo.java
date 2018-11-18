@@ -1,10 +1,10 @@
-package lab22.init;
+package lab22.fin;
 
 
-import lab22.init.account.CheckingAccount;
-import lab22.init.account.NonSufficientFundsException;
-import lab22.init.account.SavingsAccount;
-import lab22.init.customer.Customer;
+import lab22.fin.account.CheckingAccount;
+import lab22.fin.account.NonSufficientFundsException;
+import lab22.fin.account.SavingsAccount;
+import lab22.fin.customer.Customer;
 
 /**
  * This is the main program that exercises the classes in the lab.

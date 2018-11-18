@@ -1,4 +1,4 @@
-package lab22.init.customer;
+package lab22.fin.customer;
 
 /**
  * This class represents the account holder.

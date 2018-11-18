@@ -1,7 +1,7 @@
-package lab22.init.account;
+package lab22.fin.account;
 
 
-import lab22.init.customer.Customer;
+import lab22.fin.customer.Customer;
 
 /**
  * This class represents the Savings account. It is derived from CheckingAccount.

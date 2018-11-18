@@ -1,4 +1,4 @@
-package lab22.init.account;
+package lab22.fin.account;
 
 /**
  * Exception thrown to indicate that there is insufficient balance in a bank account.
