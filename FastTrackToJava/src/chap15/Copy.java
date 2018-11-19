@@ -58,71 +58,33 @@ public class Copy {
     }
 
     private static void copy1(Path source, Path destination) throws IOException {
-        InputStream in = null;
-        OutputStream out = null;
-        try {
-            in = new FileInputStream(source.toFile());
-            out = new FileOutputStream(destination.toFile(), false);
+
+        try (InputStream in = new FileInputStream(source.toFile());
+             OutputStream out = new FileOutputStream(destination.toFile(), false);) {
             byte[] buf = new byte[4096];
-            for (int numRead; (numRead = in.read(buf)) != -1;) {
+            for (int numRead; (numRead = in.read(buf)) != -1; ) {
                 out.write(buf, 0, numRead);
-            }
-        } finally {
-            try {
-                if (out != null) {
-                    out.close(); // can suppress exceptions
-                }
-            } finally {
-                if (in != null) {
-                    in.close(); // can suppress exceptions
-                }
             }
         }
     }
 
     private static void copy2(Path source, Path destination) throws IOException {
-        InputStream in = new FileInputStream(source.toFile());
-        try {
-            OutputStream out = new FileOutputStream(destination.toFile(), false);
-            try {
-                byte[] buf = new byte[4096];
-                for (int numRead; (numRead = in.read(buf)) != -1;) {
-                    out.write(buf, 0, numRead);
-                }
-            } finally {
-                out.close(); // can suppress exceptions
+
+        try (InputStream in = new FileInputStream(source.toFile());
+             OutputStream out = new FileOutputStream(destination.toFile(), false);) {
+            byte[] buf = new byte[4096];
+            for (int numRead; (numRead = in.read(buf)) != -1; ) {
+                out.write(buf, 0, numRead);
             }
-        } finally {
-            in.close(); // can suppress exceptions
         }
     }
 
     private static void copy3(Path source, Path destination) throws IOException {
-        IOException cause = null;
-        try {
-            InputStream in = new FileInputStream(source.toFile());
-            try {
-                OutputStream out = new FileOutputStream(destination.toFile(), false);
-                try {
-                    byte[] buf = new byte[4096];
-                    for (int numRead; (numRead = in.read(buf)) != -1;) {
-                        out.write(buf, 0, numRead);
-                    }
-                } catch (IOException e) {
-                    cause = e;
-                } finally {
-                    out.close();
-                }
-            } catch (IOException e) {
-                if (cause == null) {
-                    cause = e;
-                }
-            } finally {
-                in.close();
-            }
-        } finally {
-            if (cause != null) {
-                throw cause;
+        try (InputStream in = new FileInputStream(source.toFile());
+             OutputStream out = new FileOutputStream(destination.toFile(), false);) {
+            byte[] buf = new byte[4096];
+            for (int numRead; (numRead = in.read(buf)) != -1; ) {
+                out.write(buf, 0, numRead);
             }
         }
     }
@@ -131,7 +93,7 @@ public class Copy {
         try (InputStream in = new FileInputStream(source.toFile());
              OutputStream out = new FileOutputStream(destination.toFile(), false)) {
             byte[] buf = new byte[4096];
-            for (int numRead; (numRead = in.read(buf)) != -1;) {
+            for (int numRead; (numRead = in.read(buf)) != -1; ) {
                 out.write(buf, 0, numRead);
             }
         }

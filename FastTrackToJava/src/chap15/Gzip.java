@@ -27,34 +27,22 @@ public class Gzip {
         if (!file.exists()) {
             System.err.println("No such file: " + file.getAbsolutePath());
         } else if (file.isDirectory()) {
-            System.err.println("Cannot compress directory: "
-                    + file.getAbsolutePath());
+            System.err.println("Cannot compress directory: " + file.getAbsolutePath());
         } else {
             File outFile = new File(file.getAbsoluteFile() + ".gz");
-            try {
-                InputStream in = new FileInputStream(file);
-                try {
-                    OutputStream out = new FileOutputStream(outFile);
-                    try {
-                        out = new GZIPOutputStream(out);
-                        byte[] buffer = new byte[1024];
-                        int len = 0;
-                        while ((len = in.read(buffer)) > 0) {
-                            out.write(buffer, 0, len);
-                        }
-                    } finally {
-                        out.close();
-                    }
-                } finally {
-                    in.close();
+            try (InputStream in = new FileInputStream(file);
+                 OutputStream out = new GZIPOutputStream(new FileOutputStream(outFile))) {
+                byte[] buffer = new byte[1024];
+                int len = 0;
+                while ((len = in.read(buffer)) > 0) {
+                    out.write(buffer, 0, len);
                 }
                 file.delete(); // delete original
             } catch (IOException e) {
                 if (outFile.exists()) {
                     outFile.delete();
                 }
-                System.err.println("Failed to compress "
-                        + file.getAbsolutePath() + ": " + e.getMessage());
+                System.err.println("Failed to compress " + file.getAbsolutePath() + ": " + e.getMessage());
             }
         }
     }

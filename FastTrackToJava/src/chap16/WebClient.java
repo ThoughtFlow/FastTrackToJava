@@ -30,16 +30,14 @@ public class WebClient {
     private static void fetch(URL url) throws IOException {
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.connect();
-        InputStream in = connection.getInputStream();
-        try {
+
+        try (InputStream in = connection.getInputStream()) {
             byte[] buf = new byte[1024];
             int nread = 0;
             while ((nread = in.read(buf)) > 0) {
                 System.out.write(buf, 0, nread);
             }
             System.out.flush();
-        } finally {
-            in.close();
         }
         connection.disconnect();
     }

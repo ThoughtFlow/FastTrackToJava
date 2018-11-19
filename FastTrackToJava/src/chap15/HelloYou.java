@@ -12,10 +12,7 @@ public class HelloYou {
          * from the standard input stream.
          */
 
-        BufferedReader input = new BufferedReader(
-                new InputStreamReader(System.in) );
-
-        try {
+        try (BufferedReader input = new BufferedReader(new InputStreamReader(System.in))) {
             String name = input.readLine();
             System.out.println("Hello, " + name + "!");
         } catch (IOException e) {
